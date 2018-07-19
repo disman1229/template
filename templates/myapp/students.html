@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生列表</title>
+</head>
+<body>
+    <h1>学生列表</h1>
+    <ul>
+    {% for stu in students %}
+        <li>
+            {{ forloop.counter }}--{{ stu.sname }}--{{ stu.sgrade }}
+        </li>
+    {% empty %}
+        <li>目前没有学生</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

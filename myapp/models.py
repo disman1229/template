@@ -15,6 +15,7 @@ class Grades(models.Model):
         return self.gname
 
 
+
 class Students(models.Model):
     sname = models.CharField(max_length=20)
     sgender = models.BooleanField(default=True)
@@ -29,5 +30,8 @@ class Students(models.Model):
         ordering = ["id"]
 
     def __str__(self):
+        return self.sname
+
+    def getName(self):
         return self.sname
 
