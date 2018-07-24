@@ -5,19 +5,38 @@
     <title>首页</title>
 </head>
 <body>
+    {# 反向解析 #}
+    <a href="{% url 'myapp:good' 10 %}">链接</a>
     <h1>disman is a good man</h1>
     <h1>{{ stu.sname }}</h1>
     <h1>{{ stu.getName }}</h1>
     <h2>{{ num }}</h2>
 
+    {# if条件 #}
     {% if num %}
         <h1>disman is a nice man</h1>
     {% endif %}
-{% comment %}
-<h1>disman is a good man</h1>
-    <h1>{{ stu.sname }}</h1>
-    <h1>{{ stu.getName }}</h1>
-    <h2>{{ num }}</h2>
-{% endcomment %}
+
+    {# 多行注释 #}
+    {% comment %}
+        <h1>disman is a good man</h1>
+        <h1>{{ stu.sname }}</h1>
+        <h1>{{ stu.getName }}</h1>
+        <h2>{{ num }}</h2>
+    {% endcomment %}
+
+    {% ifequal 'disman' 'disman1' %}
+        <h1>disman</h1>
+    {% endifequal %}
+
+    {# 过滤器 #}
+    <h1>{{ str|upper }}</h1>
+    <h1>{{ list|join:'#' }}</h1>
+    <h1>{{ test|default:'没有' }}</h1>
+    <h1>{{ num }}</h1>
+    <h1>{{ num|add:10 }}</h1>
+    <h1>{{ num|add:-5 }}</h1>
+    <h1>{% widthratio num 1 5 %}</h1>
+    <h1>{% widthratio num 5 1 %}</h1>
 </body>
 </html>

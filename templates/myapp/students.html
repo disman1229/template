@@ -8,9 +8,15 @@
     <h1>学生列表</h1>
     <ul>
     {% for stu in students %}
-        <li>
+        {% if forloop.counter|divisibleby:2 %}
+            <li style="color: #ff1efd">
             {{ forloop.counter }}--{{ stu.sname }}--{{ stu.sgrade }}
-        </li>
+            </li>
+        {% else %}
+            <li style="color: blue">
+            {{ forloop.counter }}--{{ stu.sname }}--{{ stu.sgrade }}
+            </li>
+        {% endif %}
     {% empty %}
         <li>目前没有学生</li>
     {% endfor %}
